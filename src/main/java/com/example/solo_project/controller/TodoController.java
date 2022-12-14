@@ -9,8 +9,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/todos")
 public class TodoController {
+    private final static String TODO_DEFAULT_URL = "/todos";
     private final TodoService todoService;
     private final TodoMapper mapper;
 
@@ -26,13 +27,13 @@ public class TodoController {
         return null;
     }
 
-    @PatchMapping("{todo-id}")
+    @PatchMapping("/{todo-id}")
     public ResponseEntity patchTodo(@PathVariable("todo-id") int todoId,
             @RequestBody TodoPatchDto toDoPatchDto) {
         return null;
     }
 
-    @GetMapping("{todo-id}")
+    @GetMapping("/{todo-id}")
     public ResponseEntity getTodo(@PathVariable("todo-id") int todoId) {
         return null;
     }
@@ -42,7 +43,7 @@ public class TodoController {
         return null;
     }
 
-    @DeleteMapping("{todo-id}")
+    @DeleteMapping("/{todo-id}")
     public ResponseEntity deleteTodo(@PathVariable("todo-id") int todoId) {
         return null;
     }
